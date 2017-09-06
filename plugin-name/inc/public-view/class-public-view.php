@@ -4,16 +4,14 @@ namespace Plugin_Name\Inc\Public_View;
 
 /**
  * The public-facing functionality of the plugin.
- * 
+ *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
- *
  *
  * @link       http://example.com
  * @since      1.0.0
  *
  * @author    Your Name or Your Company
- * 
  */
 
 class Public_View {
@@ -40,8 +38,8 @@ class Public_View {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of the plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 

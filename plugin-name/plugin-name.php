@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -32,11 +31,11 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/*----------------------------------------------------------------------------*
+/**
  * Define Constants
- *----------------------------------------------------------------------------*/
+ */
 
-define(__NAMESPACE__ . '\NS', __NAMESPACE__ . '\\');
+define( __NAMESPACE__ . '\NS', __NAMESPACE__ . '\\' );
 
 define( NS . 'PLUGIN_NAME', 'plugin-name' );
 
@@ -51,46 +50,42 @@ define( NS . 'PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( NS . 'PLUGIN_TEXT_DOMAIN', 'plugin-text-domain' );
 
 
-/*----------------------------------------------------------------------------*
+/**
  * Autoload Classes
- *----------------------------------------------------------------------------*/
+ */
 
-require_once( PLUGIN_NAME_DIR . 'inc/lib/autoloader.php');
-
-/*----------------------------------------------------------------------------*
- * Register Activation and Deactivation Hooks
- *----------------------------------------------------------------------------*/
+require_once( PLUGIN_NAME_DIR . 'inc/lib/autoloader.php' );
 
 /**
- * The code that runs during plugin activation.
+ * Register Activation and Deactivation Hooks
  * This action is documented in inc/core/class-activator.php
  */
+
 register_activation_hook( __FILE__, array( NS . 'Inc\Core\Activator', 'activate' ) );
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented inc/core/class-deactivator.php
  */
+
 register_deactivation_hook( __FILE__, array( NS . 'Inc\Core\Deactivator', 'deactivate' ) );
 
 
-/*----------------------------------------------------------------------------*
+/**
  * Plugin Singleton Container
- *----------------------------------------------------------------------------*/
-/*
+ *
  * Maintains a single copy of the plugin app object
+ *
  * @since    1.0.0
  */
-
 class Plugin_Name {
 
-        static $init;
-    	/**
+	static $init;
+	/**
 	 * Loads the plugin
-         * 
-         * @access    public
+	 *
+	 * @access    public
 	 */
-
 	public static function init() {
 
 		if ( null == self::$init ) {
@@ -99,32 +94,29 @@ class Plugin_Name {
 		}
 
 		return self::$init;
-	}    
-    
+	}
+
 }
 
-/*----------------------------------------------------------------------------*
- * Begins execution of the plugin
- *----------------------------------------------------------------------------*/
 /*
+ *
+ * Begins execution of the plugin
  *
  * Since everything within the plugin is registered via hooks,
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
- * 
+ *
  * Also returns copy of the app object so 3rd party developers
  * can interact with the plugin's hooks contained within.
  *
  */
 function plugin_init() {
-        return Plugin_Name::init();
+		return Plugin_Name::init();
 }
 
 $min_php = '5.6.0';
 
-// Check the minimum required PHP version and run the plugin
-if ( version_compare( PHP_VERSION, $min_php, '>=' ) ) {        
-        plugin_init();    
+// Check the minimum required PHP version and run the plugin.
+if ( version_compare( PHP_VERSION, $min_php, '>=' ) ) {
+		plugin_init();
 }
-
-//That's all
