@@ -19,10 +19,7 @@
  * https://code.tutsplus.com/tutorials/using-namespaces-and-autoloading-in-wordpress-plugins-4--cms-27342
  */
 
-use WP_Plugin_Name as NS;
-
-spl_autoload_register(
-	function( $class_name ) {
+spl_autoload_register( function( $class_name ) {
 
 		// If the specified $class_name does not include our namespace, duck out.
 		if ( false === strpos( $class_name, 'WP_Plugin_Name' ) ) {
@@ -66,7 +63,7 @@ spl_autoload_register(
 		}
 
 		// Now build a path to the file using mapping to the file location.
-		$filepath  = trailingslashit( untrailingslashit( NS\PLUGIN_NAME_DIR ) . $namespace );
+		$filepath  = trailingslashit( untrailingslashit( plugin_dir_path( dirname( __DIR__ ) ) ) . $namespace );
 		$filepath .= $file_name;
 
 			// If the file exists in the specified path, then include it.
