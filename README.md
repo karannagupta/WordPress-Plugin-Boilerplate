@@ -3,7 +3,7 @@
 This is a fork of the original WordPress Plugin Boilerplate project with added namespace and Autoloader support. Requires PHP 5.6 and greater.
 ## Contents
 
-The `plugin-name` directory that contains the source code - a fully executable WordPress plugin.
+The `wp-plugin-name` directory that contains the source code - a fully executable WordPress plugin.
 
 ## Features
 
@@ -16,6 +16,16 @@ The `plugin-name` directory that contains the source code - a fully executable W
 
 The Boilerplate can be installed directly into your plugins folder "as-is". You will want to rename it and the classes inside of it to fit your needs.
 
+* Copy wp-plugin-name to your plugin's directory and rename it to your plugin's name
+* Perform a find and replace at the project level as follows:
+  1. Find the text `wp-plugin-name` and replace with `your-plugin-name` in all files
+  2. Find the text `WP_Plugin_Name` and replace with `Your_Plugin_Name` in all files
+  3. Rename the `css` and `js` files under `inc\admin\css`, `inc\admin\js\`, `inc\views\js`, `inc\views\css` and replace the string `wp-plugin-name` with `your-plugin-name`
+  4. Rename the `pot` file under `languages` and replace the string `wp-plugin-name` with `your-plugin-name`
+  5. Find the text `http://example.com` and replace with your URI in all files
+  6. Find the text `Your Name or Your Company` and replace with your name in all files
+* Activate the plugin
+
 Note that this will activate the source code of the Boilerplate, but because the Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added.
 
 ## History
@@ -26,10 +36,10 @@ The original launch of this version of the boilerplate included the folder struc
 
 If you want to include your own classes, or third-party libraries
 
-* `plugin-name/inc/admin` - admin-specific functionality
-* `plugin-name/inc/core` - plugin core to register hooks, load files etc
-* `plugin-name/inc/frontend` - public-facing functionality
-* `plugin-name/inc/common` - functionality shared between the admin area and the public-facing parts
+* `wp-plugin-name/inc/admin` - admin-specific functionality
+* `wp-plugin-name/inc/core` - plugin core to register hooks, load files etc
+* `wp-plugin-name/inc/frontend` - public-facing functionality
+* `wp-plugin-name/inc/common` - functionality shared between the admin area and the public-facing parts
 
 ## PHP Version
 Requires PHP `5.6.0` or greater
