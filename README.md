@@ -28,7 +28,7 @@ If you want to include your own classes, or third-party libraries
 
 * `plugin-name/inc/admin` - admin-specific functionality
 * `plugin-name/inc/core` - plugin core to register hooks, load files etc
-* `plugin-name/inc/public-view` - public-facing functionality
+* `plugin-name/inc/frontend` - public-facing functionality
 * `plugin-name/inc/common` - functionality shared between the admin area and the public-facing parts
 
 ## PHP Version

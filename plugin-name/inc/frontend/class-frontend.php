@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugin_Name\Inc\Public_View;
+namespace Plugin_Name\Inc\Frontend;
 
 /**
  * The public-facing functionality of the plugin.
@@ -14,7 +14,7 @@ namespace Plugin_Name\Inc\Public_View;
  * @author    Your Name or Your Company
  */
 
-class Public_View {
+class Frontend {
 
 	/**
 	 * The ID of this plugin.

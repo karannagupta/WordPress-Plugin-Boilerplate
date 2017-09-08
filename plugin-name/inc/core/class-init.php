@@ -3,7 +3,7 @@
 namespace Plugin_Name\Inc\Core;
 use Plugin_Name as NS;
 use Plugin_Name\Inc\Admin as Admin;
-use Plugin_Name\Inc\Public_View as Public_View;
+use Plugin_Name\Inc\Frontend as Frontend;
 
 /**
  * The core plugin class.
@@ -72,7 +72,7 @@ class Init {
 	 * - Loader - Orchestrates the hooks of the plugin.
 	 * - Internationalization_i18n - Defines internationalization functionality.
 	 * - Admin - Defines all hooks for the admin area.
-	 * - Public_View - Defines all hooks for the public side of the site.
+	 * - Frontend - Defines all hooks for the public side of the site.
 	 *
 	 * @access    private
 	 */
@@ -110,16 +110,16 @@ class Init {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-								/*
-                 * Additional Hooks go here
-                 *
-                 * e.g.
-                 * //plugin action links
-                 * $this->loader->add_filter( 'plugin_action_links_' . $this->plugin_basename, $plugin_admin, 'add_additional_action_link' );
-                 *
-                 * //admin menu pages
-                 * $this->loader->add_action('admin_menu', $plugin_admin, 'add_plugin_admin_menu');
-                 */
+		/*
+		 * Additional Hooks go here
+		 *
+		 * e.g.
+		 * //plugin action links
+		 * $this->loader->add_filter( 'plugin_action_links_' . $this->plugin_basename, $plugin_admin, 'add_additional_action_link' );
+		 *
+		 * //admin menu pages
+		 * $this->loader->add_action('admin_menu', $plugin_admin, 'add_plugin_admin_menu');
+		 */
 	}
 
 	/**
@@ -130,7 +130,7 @@ class Init {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Public_View\Public_View( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Frontend\Frontend( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );

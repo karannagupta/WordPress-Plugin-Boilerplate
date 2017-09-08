@@ -24,16 +24,16 @@ use Plugin_Name as NS;
 spl_autoload_register(
 	function( $class_name ) {
 
-			// If the specified $class_name does not include our namespace, duck out.
+		// If the specified $class_name does not include our namespace, duck out.
 		if ( false === strpos( $class_name, 'Plugin_Name' ) ) {
 			return;
 		}
 
-			// Split the class name into an array to read the namespace and class.
-			$file_parts = explode( '\\', $class_name );
+		// Split the class name into an array to read the namespace and class.
+		$file_parts = explode( '\\', $class_name );
 
-			// Do a reverse loop through $file_parts to build the path to the file.
-			$namespace = '';
+		// Do a reverse loop through $file_parts to build the path to the file.
+		$namespace = '';
 		for ( $i = count( $file_parts ) - 1; $i > 0; $i-- ) {
 
 			// Read the current component of the file part.
@@ -65,9 +65,9 @@ spl_autoload_register(
 			}
 		}
 
-			// Now build a path to the file using mapping to the file location.
-			$filepath  = trailingslashit( untrailingslashit( NS\PLUGIN_NAME_DIR ) . $namespace );
-			$filepath .= $file_name;
+		// Now build a path to the file using mapping to the file location.
+		$filepath  = trailingslashit( untrailingslashit( NS\PLUGIN_NAME_DIR ) . $namespace );
+		$filepath .= $file_name;
 
 			// If the file exists in the specified path, then include it.
 		if ( file_exists( $filepath ) ) {

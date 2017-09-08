@@ -54,7 +54,7 @@ define( NS . 'PLUGIN_TEXT_DOMAIN', 'plugin-text-domain' );
  * Autoload Classes
  */
 
-require_once( PLUGIN_NAME_DIR . 'inc/lib/autoloader.php' );
+require_once( PLUGIN_NAME_DIR . 'inc/libraries/autoloader.php' );
 
 /**
  * Register Activation and Deactivation Hooks
