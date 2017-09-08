@@ -110,7 +110,7 @@ class WP_Plugin_Name {
  * can interact with the plugin's hooks contained within.
  *
  */
-function plugin_init() {
+function wp_plugin_name_init() {
 		return WP_Plugin_Name::init();
 }
 
@@ -118,5 +118,5 @@ $min_php = '5.6.0';
 
 // Check the minimum required PHP version and run the plugin.
 if ( version_compare( PHP_VERSION, $min_php, '>=' ) ) {
-		plugin_init();
+		wp_plugin_name_init();
 }
