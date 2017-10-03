@@ -105,7 +105,7 @@ class Init {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Admin\Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Admin\Admin( $this->get_plugin_name(), $this->get_version(), $this->get_plugin_text_domain() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -114,11 +114,13 @@ class Init {
 		 * Additional Hooks go here
 		 *
 		 * e.g.
-		 * //plugin action links
-		 * $this->loader->add_filter( 'plugin_action_links_' . $this->plugin_basename, $plugin_admin, 'add_additional_action_link' );
 		 *
 		 * //admin menu pages
 		 * $this->loader->add_action('admin_menu', $plugin_admin, 'add_plugin_admin_menu');
+		 * 
+		 *  //plugin action links
+		 * $this->loader->add_filter( 'plugin_action_links_' . $this->plugin_basename, $plugin_admin, 'add_additional_action_link' );
+		 *
 		 */
 	}
 
@@ -130,7 +132,7 @@ class Init {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Frontend\Frontend( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Frontend\Frontend( $this->get_plugin_name(), $this->get_version(), $this->get_plugin_text_domain() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -171,4 +173,13 @@ class Init {
 		return $this->version;
 	}
 
+	/**
+	 * Retrieve the text domain of the plugin.
+	 *
+	 * @since     1.0.0
+	 * @return    string    The text domain of the plugin.
+	 */
+	public function get_plugin_text_domain() {
+		return $this->plugin_text_domain;
+	}	
 }

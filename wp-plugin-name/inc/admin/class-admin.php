@@ -34,16 +34,27 @@ class Admin {
 	private $version;
 
 	/**
-	 * Initialize the class and set its properties.
+	 * The text domain of this plugin.
 	 *
 	 * @since    1.0.0
-	 * @param      string $plugin_name       The name of this plugin.
-	 * @param      string $version    The version of this plugin.
+	 * @access   private
+	 * @var      string    $plugin_text_domain    The text domain of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	private $plugin_text_domain;
+
+	/**
+	 * Initialize the class and set its properties.
+	 *
+	 * @since		1.0.0
+	 * @param		string $plugin_name       The name of this plugin.
+	 * @param		string $version    The version of this plugin.
+	 * @param		string $plugin_text_domain	The text domain of this plugin
+	 */
+	public function __construct( $plugin_name, $version, $plugin_text_domain ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->plugin_text_domain = $plugin_text_domain;
 
 	}
 
