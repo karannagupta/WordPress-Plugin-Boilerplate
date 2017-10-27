@@ -26,6 +26,36 @@ The Boilerplate can be installed directly into your plugins folder "as-is". You 
   6. Find the text `Your Name or Your Company` and replace with your name in all files
 * Activate the plugin
 
+##### Quick Commands to perform the Find and Replace #####
+```	bash
+# After having downloaded and extracted the archive, navigate to the folder containing the plugin
+$ mv wp-plugin-name my-awesome-plugin
+$ cd my-awesome-plugin
+```
+```	bash
+# Replace text for "example.com/wp-plugin-name-uri" and "example.com"
+$ grep -rl "example.com/wp-plugin-name-uri" ./* | xargs sed -i "s/example.com\/wp-plugin-name-uri/somedomain.com\/my-awesome-plugin-uri/g"
+
+$ grep -rl "example.com" ./* | xargs sed -i "s/example.com/somedomain.com/g"
+```
+```	bash
+# Replace text for "wp-plugin-name"
+$ grep -rl "wp-plugin-name" ./* | xargs sed -i "s/wp-plugin-name/my-awesome-plugin/g"
+```
+```	bash
+# Replace Namespace references for the text "WP_Plugin_Name"
+$ grep -rl "WP_Plugin_Name" ./* | xargs sed -i "s/WP_Plugin_Name/My_Awesome_Plugin/g"
+```
+```	bash
+# Rename Files with the text "wp-plugin-name" in them
+$ find . -iname '*wp-plugin-name*' -exec rename 's/wp-plugin-name/my-awesome-plugin/' {} \;
+```
+```	bash
+# Replace text for Your Name
+$ grep -rl "Your Name or Your Company" ./* | xargs sed -i "s/Your Name or Your Company/Your Name/g"
+```
+
+
 Note that this will activate the source code of the Boilerplate, but because the Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added.
 
 ## History
