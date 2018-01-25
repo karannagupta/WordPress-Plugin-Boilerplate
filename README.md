@@ -1,6 +1,7 @@
 # WordPress Plugin Boilerplate with Namespace and Autoloader Support
 
-This is a fork of the original WordPress Plugin Boilerplate project with support for Namespaces and Autoloader. It requires PHP 5.6 and greater.
+This is a fork of the [WordPress Plugin Boilerplate](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate) project and adds support for Namespaces and Autoloader. It requires PHP 5.6 and greater.
+
 ## Contents
 
 The `wp-plugin-name` directory that contains the source code - a fully executable WordPress plugin.
