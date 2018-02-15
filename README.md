@@ -4,7 +4,7 @@ This is a fork of the [WordPress Plugin Boilerplate](https://github.com/DevinVin
 
 ## Contents
 
-The `wp-plugin-name` directory that contains the source code - a fully executable WordPress plugin.
+The `wp-plugin-name` directory contains the source code - a fully executable WordPress plugin.
 
 ## Features
 
@@ -27,7 +27,7 @@ The Boilerplate can be installed directly into your plugins folder "as-is". You 
   6. Find the text `Your Name or Your Company` and replace with your name in all files
 * Activate the plugin
 
-##### Quick Commands to perform the Find and Replace #####
+#### Quick Commands to perform the Find and Replace #####
 ```	bash
 # After having downloaded and extracted the archive, navigate to the folder containing the plugin
 $ mv wp-plugin-name my-awesome-plugin
@@ -55,13 +55,7 @@ $ find . -iname '*wp-plugin-name*' -exec rename 's/wp-plugin-name/my-awesome-plu
 # Replace text for Your Name
 $ grep -rl "Your Name or Your Company" ./* | xargs sed -i "s/Your Name or Your Company/Your Name/g"
 ```
-
-
 Note that this will activate the source code of the Boilerplate, but because the Boilerplate has no real functionality there will be no menu items, meta boxes, or custom post types added.
-
-## History
-
-The original launch of this version of the boilerplate included the folder structure needed for using your plugin on WordPress.org. That folder structure has been moved to its own repo here: https://github.com/DevinVinson/Plugin-Directory-Boilerplate
 
 ### Plugin Structure
 
@@ -73,22 +67,27 @@ If you want to include your own classes, or third-party libraries
 * `wp-plugin-name/inc/common` - functionality shared between the admin area and the public-facing parts
 * `wp-plugin-name/inc/libraries` - libraries that the plugin may use
 
-## PHP Version
+### PHP Version
 Requires PHP `5.6.0` or greater
 
-## Recommended Tools
+# Developer Notes
 
-### i18n Tools
+### The BoilerPlate uses a variable for the Text Domain
 
-The WordPress Plugin Boilerplate uses a variable to store the text domain used when internationalizing strings throughout the Boilerplate. To take advantage of this method, there are tools that are recommended for providing correct, translatable files:
+The WordPress Plugin Boilerplate uses a **variable** (`$this->plugin_text_domain`) to store the text domain, used when internationalizing strings. To take advantage of this method, there are tools that are recommended for providing correct, translatable files:
 
+#### i18n Tools
 * [Poedit](http://www.poedit.net/)
 * [makepot](http://i18n.svn.wordpress.org/tools/trunk/)
 * [i18n](https://github.com/grappler/i18n)
 
-Any of the above tools should provide you with the proper tooling to internationalize the plugin.
+Any of the above tools should provide you with the proper tooling to internationalize the plugin. However, if you face problems translating the strings with an automated tool/process, replace `$this->plugin_text_domain` with the literal string of your plugin's text domain throughout the plugin.
 
-## License
+### References:
+* [Here's a discussion from the original project in favor of using variables](https://github.com/DevinVinson/WordPress-Plugin-Boilerplate/issues/59)
+* [The Plugin Handbook Recommended Way (i.e. not to use variables)](https://developer.wordpress.org/plugins/internationalization/how-to-internationalize-your-plugin/#text-domains)
+
+# License
 
 The WordPress Plugin Boilerplate is licensed under the GPL v2 or later.
 
@@ -100,14 +99,13 @@ The WordPress Plugin Boilerplate is licensed under the GPL v2 or later.
 
 A copy of the license is included in the root of the plugin’s directory. The file is named `LICENSE`.
 
-## Important Notes
-
-### Licensing
-
-The WordPress Plugin Boilerplate is licensed under the GPL v2 or later; however, if you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.
+If you opt to use third-party code that is not compatible with v2, then you may need to switch to using code that is GPL v3 compatible.
 
 For reference, [here's a discussion](http://make.wordpress.org/themes/2013/03/04/licensing-note-apache-and-gpl/) that covers the Apache 2.0 License used by [Bootstrap](http://twitter.github.io/bootstrap/).
 
+# History
+
+The original launch of this version of the boilerplate included the folder structure needed for using your plugin on WordPress.org. That folder structure has been moved to its own repo here: https://github.com/DevinVinson/Plugin-Directory-Boilerplate
 
 # Credits
 
