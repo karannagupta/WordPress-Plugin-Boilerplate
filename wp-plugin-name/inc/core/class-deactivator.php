@@ -11,8 +11,7 @@ namespace WP_Plugin_Name\Inc\Core;
  * @since      1.0.0
  *
  * @author     Your Name or Your Company
- */
-
+ **/
 class Deactivator {
 
 	/**

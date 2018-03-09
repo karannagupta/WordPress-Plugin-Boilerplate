@@ -80,7 +80,13 @@ register_deactivation_hook( __FILE__, array( NS . 'Inc\Core\Deactivator', 'deact
  */
 class WP_Plugin_Name {
 
-	static $init;
+	/**
+	 * The instance of the plugin.
+	 *
+	 * @since    1.0.0
+	 * @var      Init $init Instance of the plugin.
+	 */
+	private static $init;
 	/**
 	 * Loads the plugin
 	 *
@@ -88,7 +94,7 @@ class WP_Plugin_Name {
 	 */
 	public static function init() {
 
-		if ( null == self::$init ) {
+		if ( null === self::$init ) {
 			self::$init = new Inc\Core\Init();
 			self::$init->run();
 		}
@@ -98,8 +104,7 @@ class WP_Plugin_Name {
 
 }
 
-/*
- *
+/**
  * Begins execution of the plugin
  *
  * Since everything within the plugin is registered via hooks,
@@ -108,8 +113,7 @@ class WP_Plugin_Name {
  *
  * Also returns copy of the app object so 3rd party developers
  * can interact with the plugin's hooks contained within.
- *
- */
+ **/
 function wp_plugin_name_init() {
 		return WP_Plugin_Name::init();
 }

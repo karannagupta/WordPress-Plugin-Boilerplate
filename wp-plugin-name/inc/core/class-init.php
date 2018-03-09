@@ -51,8 +51,9 @@ class Init {
 	 */
 	protected $plugin_text_domain;
 
-
-	// define the core functionality of the plugin.
+	/**
+	 * Initialize and define the core functionality of the plugin.
+	 */
 	public function __construct() {
 
 		$this->plugin_name = NS\PLUGIN_NAME;
@@ -117,7 +118,7 @@ class Init {
 		 *
 		 * //admin menu pages
 		 * $this->loader->add_action('admin_menu', $plugin_admin, 'add_plugin_admin_menu');
-		 * 
+		 *
 		 *  //plugin action links
 		 * $this->loader->add_filter( 'plugin_action_links_' . $this->plugin_basename, $plugin_admin, 'add_additional_action_link' );
 		 *
@@ -181,5 +182,6 @@ class Init {
 	 */
 	public function get_plugin_text_domain() {
 		return $this->plugin_text_domain;
-	}	
+	}
+
 }
