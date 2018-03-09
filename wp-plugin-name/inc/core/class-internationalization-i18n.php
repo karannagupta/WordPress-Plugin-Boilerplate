@@ -13,23 +13,28 @@ namespace WP_Plugin_Name\Inc\Core;
  *
  * @author     Your Name or Your Company
  */
-class Internationalization_i18n {
+class Internationalization_I18n {
 
+	/**
+	 * The text domain of the plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      string    $text_domain    The text domain of the plugin.
+	 */
 	private $text_domain;
 
 	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string $plugin_name       The name of this plugin.
-	 * @param      string $version    The version of this plugin.
+	 * @param      string $plugin_text_domain       The text domain of this plugin.
 	 */
 	public function __construct( $plugin_text_domain ) {
 
 		$this->text_domain = $plugin_text_domain;
 
 	}
-
 
 	/**
 	 * Load the plugin text domain for translation.
@@ -44,4 +49,5 @@ class Internationalization_i18n {
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
 	}
+
 }

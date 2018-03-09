@@ -71,7 +71,7 @@ class Init {
 	 * Loads the following required dependencies for this plugin.
 	 *
 	 * - Loader - Orchestrates the hooks of the plugin.
-	 * - Internationalization_i18n - Defines internationalization functionality.
+	 * - Internationalization_I18n - Defines internationalization functionality.
 	 * - Admin - Defines all hooks for the admin area.
 	 * - Frontend - Defines all hooks for the public side of the site.
 	 *
@@ -85,14 +85,14 @@ class Init {
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Internationalization_i18n class in order to set the domain and to register the hook
+	 * Uses the Internationalization_I18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @access    private
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Internationalization_i18n( $this->plugin_text_domain );
+		$plugin_i18n = new Internationalization_I18n( $this->plugin_text_domain );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
