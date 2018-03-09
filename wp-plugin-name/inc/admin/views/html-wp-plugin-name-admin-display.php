@@ -10,7 +10,8 @@
  *
  * @package    WP_Plugin_Name
  * @subpackage WP_Plugin_Name/inc/admin/views
- */
+ **/
+
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->

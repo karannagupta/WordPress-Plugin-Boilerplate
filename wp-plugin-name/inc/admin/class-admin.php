@@ -12,7 +12,7 @@ namespace WP_Plugin_Name\Inc\Admin;
  * @since      1.0.0
  *
  * @author    Your Name or Your Company
- */
+ **/
 class Admin {
 
 	/**
@@ -30,7 +30,7 @@ class Admin {
 	 * @since    1.0.0
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
-	 */
+	 **/
 	private $version;
 
 	/**
@@ -39,17 +39,17 @@ class Admin {
 	 * @since    1.0.0
 	 * @access   private
 	 * @var      string    $plugin_text_domain    The text domain of this plugin.
-	 */
+	 **/
 	private $plugin_text_domain;
 
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @since		1.0.0
-	 * @param		string $plugin_name       The name of this plugin.
-	 * @param		string $version    The version of this plugin.
-	 * @param		string $plugin_text_domain	The text domain of this plugin
-	 */
+	 * @since       1.0.0
+	 * @param       string $plugin_name        The name of this plugin.
+	 * @param       string $version            The version of this plugin.
+	 * @param       string $plugin_text_domain The text domain of this plugin.
+	 **/
 	public function __construct( $plugin_name, $version, $plugin_text_domain ) {
 
 		$this->plugin_name = $plugin_name;
@@ -62,7 +62,7 @@ class Admin {
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
-	 */
+	 **/
 	public function enqueue_styles() {
 
 		/**
@@ -85,10 +85,9 @@ class Admin {
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0
-	 */
+	 **/
 	public function enqueue_scripts() {
-
-		/**
+		/*
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
