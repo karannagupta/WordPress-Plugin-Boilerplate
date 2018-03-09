@@ -8,9 +8,8 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    WP_Plugin_Name
- * @subpackage WP_Plugin_Name/inc/admin/views
- **/
+ * @author    Your Name or Your Company
+ */
 
 ?>
 

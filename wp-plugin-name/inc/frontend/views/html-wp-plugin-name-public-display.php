@@ -8,9 +8,9 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    WP_Plugin_Name
- * @subpackage WP_Plugin_Name/inc/frontend/views
+ * @author    Your Name or Your Company
  */
+
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
