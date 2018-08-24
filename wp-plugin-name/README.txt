@@ -2,10 +2,10 @@
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: http://example.com/
 Tags: comments, spam
-Requires at least: 3.0.1
-Tested up to: 3.4
+Requires at least: 4.5
+Tested up to: 4.9.8
 Requires PHP: 5.6
-Stable tag: 4.3
+Stable tag: 1.0.0
 License: GPL version 3 or any later version
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -60,20 +60,18 @@ Answer to foo bar dilemma.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.1 =
 * A change since the previous version.
 * Another change.
 
-= 0.5 =
+= 1.0.0 =
 * List versions from most recent at top to oldest at bottom.
+* Reference https://semver.org/ for determine your version numbers.
 
 == Upgrade Notice ==
 
-= 1.0 =
+= 1.0.1 =
 Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
 
 == Arbitrary section ==
 
