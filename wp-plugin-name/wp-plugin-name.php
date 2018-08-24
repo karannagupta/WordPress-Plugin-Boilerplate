@@ -118,9 +118,7 @@ function wp_plugin_name_init() {
 		return WP_Plugin_Name::init();
 }
 
-$min_php = '5.6.0';
-
 // Check the minimum required PHP version and run the plugin.
-if ( version_compare( PHP_VERSION, $min_php, '>=' ) ) {
+if ( version_compare( PHP_VERSION, '5.6.0', '>=' ) ) {
 		wp_plugin_name_init();
 }
