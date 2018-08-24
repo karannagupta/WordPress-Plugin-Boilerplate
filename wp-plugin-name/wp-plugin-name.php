@@ -18,8 +18,8 @@
  * Version:           1.0.0
  * Author:            Your Name or Your Company
  * Author URI:        http://example.com/
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL version 3 or any later version
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       wp-plugin-name
  * Domain Path:       /languages
  */
