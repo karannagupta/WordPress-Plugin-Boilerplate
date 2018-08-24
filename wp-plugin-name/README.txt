@@ -67,6 +67,7 @@ Answer to foo bar dilemma.
 = 1.0.0 =
 * List versions from most recent at top to oldest at bottom.
 * Reference https://semver.org/ for determine your version numbers.
+* Make sure to update the readme.txt header, the wp-plugin-name.php header, and the `PLUGIN_VERSION` constant each time you release a new version.
 
 == Upgrade Notice ==
 
