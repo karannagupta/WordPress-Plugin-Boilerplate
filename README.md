@@ -20,11 +20,14 @@ The Boilerplate can be installed directly into your plugins folder "as-is". You 
 * Copy wp-plugin-name to your plugin's directory and rename it to your plugin's name
 * Perform a find and replace at the project level as follows:
   1. Find the text `wp-plugin-name` and replace with `your-plugin-name` in all files
-  2. Find the text `WP_Plugin_Name` and replace with `Your_Plugin_Name` in all files
-  3. Rename the `css` and `js` files under `inc\admin\css`, `inc\admin\js\`, `inc\views\js`, `inc\views\css` and replace the string `wp-plugin-name` with `your-plugin-name`
-  4. Rename the `pot` file under `languages` and replace the string `wp-plugin-name` with `your-plugin-name`
-  5. Find the text `http://example.com` and replace with your URI in all files
-  6. Find the text `Your Name or Your Company` and replace with your name in all files
+  1. Find the text `wp_plugin_name` and replace with `your_plugin_name` in all files
+  1. Find the text `WP Plugin Name` and replace with `Your Plugin Name` in all files
+  1. Find the text `WordPress Plugin Boilerplate` and replace with `Your Plugin Name` in all files
+  1. Find the text `WP_Plugin_Name` and replace with `Your_Plugin_Name` in all files
+  1. Rename the `css` and `js` files under `inc\admin\css`, `inc\admin\js\`, `inc\views\js`, `inc\views\css` and replace the string `wp-plugin-name` with `your-plugin-name`
+  1. Rename the `pot` file under `languages` and replace the string `wp-plugin-name` with `your-plugin-name`
+  1. Find the text `http://example.com` and replace with your URI in all files.
+  1. Find the text `Your Name or Your Company` and replace with your name in all files
 * Activate the plugin
 
 #### Quick Commands to perform the Find and Replace #####
