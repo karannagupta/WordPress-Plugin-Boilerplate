@@ -3,6 +3,7 @@
 namespace WP_Plugin_Name\Inc\Core;
 use WP_Plugin_Name as NS;
 use WP_Plugin_Name\Inc\Admin as Admin;
+use WP_Plugin_Name\Inc\Common as Common;
 use WP_Plugin_Name\Inc\Frontend as Frontend;
 
 /**
@@ -52,10 +53,19 @@ class Init {
 	protected $plugin_text_domain;
 
 	/**
+	 * Shortcodes to register.
+	 *
+	 * The shortcode tag must match the 'public static' method name within Common.
+	 *
+	 * @since 1.0.0
+	 */
+	private $shortcodes = [
+	];
+
+	/**
 	 * Initialize and define the core functionality of the plugin.
 	 */
 	public function __construct() {
-
 		$this->plugin_name = NS\PLUGIN_NAME;
 		$this->version = NS\PLUGIN_VERSION;
 				$this->plugin_basename = NS\PLUGIN_BASENAME;
@@ -99,15 +109,37 @@ class Init {
 	}
 
 	/**
+	 * Register all of the hooks related to both the admin area and the
+	 * public-facing functionality of the plugin.
+	 *
+	 * @access    private
+	 */
+	private function define_common_hooks() {
+		$plugin_common = new Common\Common( $this->get_plugin_name(), $this->get_version(), $this->get_plugin_text_domain() );
+
+		// Add all the shortcodes
+		foreach ( $this->shortcodes as $shortcode ) {
+			$method = '\\' . NS . '\Inc\Common\Common::' . $shortcode;
+			add_shortcode( $shortcode, $method );
+		}
+
+		// Example: $this->loader->add_filter( 'gform_currencies', $plugin_common, 'gf_currency_usd_whole_dollars', 50 );
+	}
+
+	/**
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
 	 * @access    private
 	 */
 	private function define_admin_hooks() {
+		if ( ! is_admin() ) {
+			return;
+		}
 
-		$plugin_admin = new Admin\Admin( $this->get_plugin_name(), $this->get_version(), $this->get_plugin_text_domain() );
+		$plugin_admin = new Admin\Admin();
 
+		// Enqueue plugin's admin assets
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
@@ -132,12 +164,19 @@ class Init {
 	 * @access    private
 	 */
 	private function define_public_hooks() {
+		if ( is_admin() ) {
+			return;
+		}
 
-		$plugin_public = new Frontend\Frontend( $this->get_plugin_name(), $this->get_version(), $this->get_plugin_text_domain() );
+		$plugin_public = new Frontend\Frontend();
 
+		// Enqueue plugin's front-end assets
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
+		// Do Thing #1 here
+
+		// Do Thing #2 here
 	}
 
 	/**
@@ -183,5 +222,4 @@ class Init {
 	public function get_plugin_text_domain() {
 		return $this->plugin_text_domain;
 	}
-
 }
