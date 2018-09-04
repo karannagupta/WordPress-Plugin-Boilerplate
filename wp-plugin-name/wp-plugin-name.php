@@ -115,6 +115,7 @@ class WP_Plugin_Name {
 	 * @var      Init $init Instance of the plugin.
 	 */
 	private static $init;
+
 	/**
 	 * Loads the plugin
 	 *
@@ -131,18 +132,6 @@ class WP_Plugin_Name {
 		}
 
 		return self::$init;
-	}
-
-	/**
-	 * Output a wp-admin notice.
-	 *
-	 * @param        $message
-	 * @param string $type
-	 */
-	public static function do_admin_notice( $message, $type = 'error' ) {
-		$class = sprintf( '%s %s', $type, \sanitize_html_class( PLUGIN_NAME ) );
-
-		printf('<div class="%s"><p>%s</p></div>', $class, $message );
 	}
 
 	/**
@@ -163,19 +152,6 @@ class WP_Plugin_Name {
 		}
 
 		return $success;
-	}
-
-	/**
-	 * Output a message about a required plugin missing, and link to Plugins page.
-	 */
-	public static function notice_old_php_version() {
-		$message = sprintf(
-			__( '%1$s requires at least PHP version %2$s in order to work.', PLUGIN_TEXT_DOMAIN ),
-			'<strong>' . PLUGIN_NAME . '</strong>',
-			'<strong>' . self::$min_php . '</strong>'
-		);
-
-		self::do_admin_notice( $message );
 	}
 
 	/**
@@ -215,6 +191,31 @@ class WP_Plugin_Name {
 		}
 
 		return $result;
+	}
+
+	/**
+	 * Output a message about a required plugin missing, and link to Plugins page.
+	 */
+	public static function notice_old_php_version() {
+		$message = sprintf(
+			__( '%1$s requires at least PHP version %2$s in order to work.', PLUGIN_TEXT_DOMAIN ),
+			'<strong>' . PLUGIN_NAME . '</strong>',
+			'<strong>' . self::$min_php . '</strong>'
+		);
+
+		self::do_admin_notice( $message );
+	}
+
+	/**
+	 * Output a wp-admin notice.
+	 *
+	 * @param        $message
+	 * @param string $type
+	 */
+	public static function do_admin_notice( $message, $type = 'error' ) {
+		$class = sprintf( '%s %s', $type, \sanitize_html_class( PLUGIN_NAME ) );
+
+		printf( '<div class="%s"><p>%s</p></div>', $class, $message );
 	}
 
 	/**

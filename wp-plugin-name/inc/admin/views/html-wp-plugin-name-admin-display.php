@@ -8,7 +8,7 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @author    Your Name or Your Company
+ * @author     Your Name or Your Company
  */
 
 ?>

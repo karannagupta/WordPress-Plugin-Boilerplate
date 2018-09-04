@@ -1,6 +1,7 @@
 <?php
 
 namespace WP_Plugin_Name\Inc\Core;
+
 use WP_Plugin_Name as NS;
 use WP_Plugin_Name\Inc\Admin as Admin;
 use WP_Plugin_Name\Inc\Common as Common;
@@ -21,7 +22,7 @@ class Init {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @var      Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Loader $loader Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -30,7 +31,7 @@ class Init {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $plugin_base_name    The string used to uniquely identify this plugin.
+	 * @var      string $plugin_base_name The string used to uniquely identify this plugin.
 	 */
 	protected $plugin_basename;
 
@@ -39,7 +40,7 @@ class Init {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $version    The current version of the plugin.
+	 * @var      string $version The current version of the plugin.
 	 */
 	protected $version;
 
@@ -48,7 +49,7 @@ class Init {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $version    The current version of the plugin.
+	 * @var      string $version The current version of the plugin.
 	 */
 	protected $plugin_text_domain;
 
@@ -66,13 +67,14 @@ class Init {
 	 * Initialize and define the core functionality of the plugin.
 	 */
 	public function __construct() {
-		$this->plugin_name = NS\PLUGIN_NAME;
-		$this->version = NS\PLUGIN_VERSION;
-				$this->plugin_basename = NS\PLUGIN_BASENAME;
-				$this->plugin_text_domain = NS\PLUGIN_TEXT_DOMAIN;
+		$this->plugin_name        = NS\PLUGIN_NAME;
+		$this->version            = NS\PLUGIN_VERSION;
+		$this->plugin_basename    = NS\PLUGIN_BASENAME;
+		$this->plugin_text_domain = NS\PLUGIN_TEXT_DOMAIN;
 
 		$this->load_dependencies();
 		$this->set_locale();
+		$this->define_common_hooks();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 	}
@@ -106,6 +108,34 @@ class Init {
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
+	}
+
+	/**
+	 * The name of the plugin used to uniquely identify it within the context of
+	 * WordPress and to define internationalization functionality.
+	 */
+	public function get_plugin_name() {
+		return $this->plugin_name;
+	}
+
+	/**
+	 * Retrieve the version number of the plugin.
+	 *
+	 * @since     1.0.0
+	 * @return    string    The version number of the plugin.
+	 */
+	public function get_version() {
+		return $this->version;
+	}
+
+	/**
+	 * Retrieve the text domain of the plugin.
+	 *
+	 * @since     1.0.0
+	 * @return    string    The text domain of the plugin.
+	 */
+	public function get_plugin_text_domain() {
+		return $this->plugin_text_domain;
 	}
 
 	/**
@@ -187,39 +217,11 @@ class Init {
 	}
 
 	/**
-	 * The name of the plugin used to uniquely identify it within the context of
-	 * WordPress and to define internationalization functionality.
-	 */
-	public function get_plugin_name() {
-		return $this->plugin_name;
-	}
-
-	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @return    Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;
-	}
-
-	/**
-	 * Retrieve the version number of the plugin.
-	 *
-	 * @since     1.0.0
-	 * @return    string    The version number of the plugin.
-	 */
-	public function get_version() {
-		return $this->version;
-	}
-
-	/**
-	 * Retrieve the text domain of the plugin.
-	 *
-	 * @since     1.0.0
-	 * @return    string    The text domain of the plugin.
-	 */
-	public function get_plugin_text_domain() {
-		return $this->plugin_text_domain;
 	}
 }

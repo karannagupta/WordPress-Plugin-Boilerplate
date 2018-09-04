@@ -13,7 +13,7 @@ use WP_Plugin_Name\Inc\Common as Common;
  * @link       http://example.com
  * @since      1.0.0
  *
- * @author    Your Name or Your Company
+ * @author     Your Name or Your Company
  */
 class Admin {
 
@@ -22,7 +22,7 @@ class Admin {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
+	 * @var      string $plugin_name The ID of this plugin.
 	 */
 	private $plugin_name;
 
@@ -31,7 +31,7 @@ class Admin {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
+	 * @var      string $version The current version of this plugin.
 	 */
 	private $version;
 
@@ -40,7 +40,7 @@ class Admin {
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin_text_domain    The text domain of this plugin.
+	 * @var      string $plugin_text_domain The text domain of this plugin.
 	 */
 	private $plugin_text_domain;
 
