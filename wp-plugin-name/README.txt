@@ -1,7 +1,7 @@
 === WordPress Plugin Boilerplate ===
-Contributors: (this should be a list of wordpress.org userid's)
+Contributors: cliffpaulick
 Donate link: http://example.com/
-Tags: comments, spam
+Tags:
 Requires at least: 4.5
 Tested up to: 4.9.8
 Requires PHP: 5.6
@@ -21,10 +21,9 @@ Markdown parsed.
 A few notes about the sections above:
 
 *   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
+*   "Tags" is a comma separated list of tags that apply to the plugin (maximum of 3-5 tags)
+*   "Requires at least" is the lowest version of WordPress that the plugin will work on
+*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on higher versions... this is just the highest one you've verified.
 *   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
 stable.
 
