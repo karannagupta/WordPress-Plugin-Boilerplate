@@ -1,4 +1,4 @@
-(function( $ ) {
+(function ( $ ) {
 	'use strict';
 
 	/**
@@ -27,8 +27,8 @@
 	 * single DOM-ready or window-load handler for a particular page.
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
-         * 
-         * The file is enqueued from inc/admin/class-admin.php.
+	 *
+	 * The file is enqueued from inc/admin/class-admin.php.
 	 */
 
 })( jQuery );
