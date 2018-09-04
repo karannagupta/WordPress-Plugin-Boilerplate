@@ -20,7 +20,7 @@ class Internationalization_I18n {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $text_domain    The text domain of the plugin.
+	 * @var      string $text_domain The text domain of the plugin.
 	 */
 	private $text_domain;
 
@@ -28,12 +28,11 @@ class Internationalization_I18n {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string $plugin_text_domain       The text domain of this plugin.
+	 *
+	 * @param      string $plugin_text_domain The text domain of this plugin.
 	 */
 	public function __construct( $plugin_text_domain ) {
-
 		$this->text_domain = $plugin_text_domain;
-
 	}
 
 	/**
@@ -42,7 +41,6 @@ class Internationalization_I18n {
 	 * @since    1.0.0
 	 */
 	public function load_plugin_textdomain() {
-
 		load_plugin_textdomain(
 			$this->text_domain,
 			false,
